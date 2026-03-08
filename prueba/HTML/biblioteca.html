@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca - PetGym</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/biblioteca.css">
+</head>
+
+<body>
+    <header>
+        <h1>PETGYM</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="about.html">NOSOTROS</a>
+            <a href="store.html">TIENDA</a>
+            <a href="biblioteca.html">BIBLIOTECA</a>
+            <a href="#">TAREAS</a>
+            <a href="inicio.html">INICIAR SESION</a><a>/</a><a href="registro.html">REGISTRARSE</a>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="biblioteca-hero">
+            <h2>BIBLIOTECA</h2>
+            <p>Explora nuestra colección de recursos educativos para el cuidado y entrenamiento de tu mascota</p>
+        </section>
+
+        <div class="biblioteca-header">
+            <div class="buscador">
+                <input type="text" placeholder="BUSCAR RECURSOS...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="filtros">
+                <button class="filtro-btn activo">TODOS</button>
+                <button class="filtro-btn">VIDEOS</button>
+                <button class="filtro-btn">DOCUMENTOS</button>
+                <button class="filtro-btn">IMÁGENES</button>
+            </div>
+        </div>
+
+        <div class="biblioteca-grid">
+            <!-- Video 1 -->
+            <div class="tarjeta video-tarjeta">
+                <div class="media-preview">
+                    <img src="https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=500" alt="Video preview">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="duracion">12:30</span>
+                </div>
+                <div class="tarjeta-info">
+                    <div class="tarjeta-header">
+                        <span class="categoria-badge">ENTRENAMIENTO</span>
+                        <span class="tipo-icon"><i class="fas fa-video"></i></span>
+                    </div>
+                    <h3>Cómo enseñar a tu perro a sentarse</h3>
+                    <p>Aprende la técnica básica para enseñarle a tu perro a sentarse en simples pasos.</p>
+                    <div class="tarjeta-footer">
+                        <span class="fecha"><i class="far fa-calendar"></i> 15.01.24</span>
+                        <button class="ver-btn">VER</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documento 1 -->
+            <div class="tarjeta documento-tarjeta">
+                <div class="media-preview">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <div class="tarjeta-info">
+                    <div class="tarjeta-header">
+                        <span class="categoria-badge">GUÍA</span>
+                        <span class="tipo-icon"><i class="fas fa-file-pdf"></i></span>
+                    </div>
+                    <h3>Nutrición para cachorros</h3>
+                    <p>Guía completa sobre alimentación en los primeros meses de vida.</p>
+                    <div class="tarjeta-footer">
+                        <span class="fecha"><i class="far fa-calendar"></i> 10.01.24</span>
+                        <button class="descargar-btn">PDF</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen 1 -->
+            <div class="tarjeta imagen-tarjeta">
+                <div class="media-preview">
+                    <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=500" alt="Gato persa">
+                </div>
+                <div class="tarjeta-info">
+                    <div class="tarjeta-header">
+                        <span class="categoria-badge">GALERÍA</span>
+                        <span class="tipo-icon"><i class="fas fa-image"></i></span>
+                    </div>
+                    <h3>Razas: Gato Persa</h3>
+                    <p>Características y cuidados del gato persa.</p>
+                    <div class="tarjeta-footer">
+                        <span class="fecha"><i class="far fa-calendar"></i> 05.01.24</span>
+                        <button class="ver-btn">VER</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="tarjeta video-tarjeta">
+                <div class="media-preview">
+                    <img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=500" alt="Gato jugando">
+                    <div class="play-overlay">
+                        <i class="fas fa-play"></i>
+                    </div>
+                    <span class="duracion">08:45</span>
+                </div>
+                <div class="tarjeta-info">
+                    <div class="tarjeta-header">
+                        <span class="categoria-badge">JUEGOS</span>
+                        <span class="tipo-icon"><i class="fas fa-video"></i></span>
+                    </div>
+                    <h3>5 juegos para estimular a tu gato</h3>
+                    <p>Actividades divertidas para mantener a tu gato activo.</p>
+                    <div class="tarjeta-footer">
+                        <span class="fecha"><i class="far fa-calendar"></i> 03.01.24</span>
+                        <button class="ver-btn">VER</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Documento 2 -->
+            <div class="tarjeta documento-tarjeta">
+                <div class="media-preview">
+                    <i class="fas fa-file-word"></i>
+                </div>
+                <div class="tarjeta-info">
+                    <div class="tarjeta-header">
+                        <span class="categoria-badge">SALUD</span>
+                        <span class="tipo-icon"><i class="fas fa-file-word"></i></span>
+                    </div>
+                    <h3>Calendario de vacunación</h3>
+                    <p>Calendario completo para perros y gatos.</p>
+                    <div class="tarjeta-footer">
+                        <span class="fecha"><i class="far fa-calendar"></i> 01.01.24</span>
+                        <button class="descargar-btn">DOC</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Imagen 2 -->
+            <div class="tarjeta imagen-tarjeta">
+                <div class="media-preview">
+                    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=500" alt="Perros">
+                </div>
+                <div class="tarjeta-info">
+                    <div class="tarjeta-header">
+                        <span class="categoria-badge">INFOGRAFÍA</span>
+                        <span class="tipo-icon"><i class="fas fa-image"></i></span>
+                    </div>
+                    <h3>Alimentos prohibidos</h3>
+                    <p>Infografía con alimentos que no debes darle a tu perro.</p>
+                    <div class="tarjeta-footer">
+                        <span class="fecha"><i class="far fa-calendar"></i> 28.12.23</span>
+                        <button class="ver-btn">VER</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        
+
+        <footer>
+            <div class="footer-contenido">
+
+                <div class="footer-col">
+                    <img src="../ASSETS/IMAGENES/LogoAnimal.png" alt="Logo" class="footer-logo">
+                    <p>Tu guía para mascotas en espacios reducidos.</p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Navegación</h4>
+                    <a href="index.html">Inicio</a>
+                    <a href="about.html">Sobre nosotros</a>
+                    <a href="tienda.html">Tienda</a>
+                    <a href="biblioteca.html">Biblioteca</a>
+                    <a href="tareas.html">Tareas</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Cuenta</h4>
+                    <a href="usuario.html">Mi perfil</a>
+                    <a href="inicio.html">Iniciar sesión</a>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Síguenos</h4>
+                    <div class="redes">
+                        <a href="#"><i class="bi bi-instagram"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-tiktok"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 PetGym. Todos los derechos reservados.</p>
+            </div>
+        </footer>
+
+    </main>
+
+
+</body>
+
+</html>

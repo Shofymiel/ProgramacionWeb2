@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de sesión</title>
+    <link rel="stylesheet" href="../CSS/registro.css">
+</head>
+
+<body>
+    <form id="registroForm">
+        <div class="foto-perfil-container">
+            <img src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y" alt="Vista previa"
+                class="foto-preview" id="preview">
+            <label for="foto" class="foto-button">Seleccionar foto</label>
+            <input type="file" accept=".png,.jpg,.jpeg" id="foto" required onchange="previewImage(event)">
+            <span class="file-name" id="file-name">Ningún archivo seleccionado</span>
+        </div>
+
+        <h2>Registro de sesión</h2>
+
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <span id="error-404" style="color: red; font-size: 12px;"></span>
+
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" placeholder="Apellidos">
+        <span id="error-apellidos" style="color: red; font-size: 12px;"></span>
+
+        <label for="usuario">Nombre de usuario</label>
+        <input type="text" id="usuario" placeholder="Nombre de usuario">
+        <span id="error-usuario" style="color: red; font-size: 12px;"></span>
+        
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" placeholder="Teléfono">
+        <span id="error-telefono" style="color: red; font-size: 12px;"></span>
+
+        <label for="genero">Seleccione su género</label>
+        <select id="genero">
+            <option value="Masculino">Masculino</option>
+            <option value="Femenino">Femenino</option>
+            <option value="Anonimo">Prefiero no decir</option>
+        </select>
+
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo"  placeholder="Correo electrónico">
+        <span id="error-correo" style="color: red; font-size: 12px;"></span>
+
+        <label for="contra">Contraseña</label>
+        <input type="password" id="contra"  placeholder="Contraseña">
+        <span id="error-contra" style="color: red; font-size: 12px;"></span>
+
+        <label for="fechaCum">Fecha de nacimiento</label>
+        <input type="date" id="fechaCum" >
+        <span id="error-fechaCum" style="color: red; font-size: 12px;"></span>
+
+        <button type="submit" onclick="window.location.href='inicio.html'"> Registrarse</button>
+        <p>
+            ¿Ya tienes cuenta? <a href="inicio.html">Inicia sesión</a>
+        </p>
+    </form>
+
+  
+
+    <script src="../JS/ValidacionRegistro.js"></script>
+</body>
+
+</html>

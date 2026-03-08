@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(145deg, #ffffff 0%, #1a1a1a 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+form {
+    max-width: 400px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(8px);
+    padding: 2.5rem 2rem;
+    border-radius: 24px;
+    box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 500;
+    color: #0a1a2b;
+    margin-bottom: 2rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #eaeef2;
+    text-align: center;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #4a5565;
+    margin-bottom: 0.4rem;
+}
+
+input {
+    width: 100%;
+    padding: 0.7rem 0;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+    border: none;
+    border-bottom: 1.5px solid #dce2e9;
+    background: transparent;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.15s ease;
+    color: #1e2a3a;
+    outline: none;
+}
+
+input:focus {
+    border-bottom-color: #0a2540;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-container input {
+    width: auto;
+    margin-right: 0.5rem;
+    margin-bottom: 0;
+}
+
+.checkbox-container label {
+    margin-bottom: 0;
+    text-transform: none;
+    font-size: 0.9rem;
+}
+
+button {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    background: #0a1a2b;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #0a1a2b;
+    font-family: 'Inter', sans-serif;
+}
+
+button:hover {
+    background: #142b41;
+}
+
+.mensaje-rol {
+    text-align: center;
+    margin-top: 1rem;
+    padding: 0.5rem;
+    background: #f0f3f7;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    color: #0a1a2b;
+    font-weight: 500;
+}
