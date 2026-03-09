@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/tareas.css">
+
+    <title>PetGym | Tareas</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>PETGYM</h1>
+        <nav>
+            <a href="index.html">HOME</a>
+            <a href="about.html">NOSOTROS</a>
+            <a href="store.html">TIENDA</a>
+            <a href="biblioteca.html">BIBLIOTECA</a>
+            <a href="tareas.html">TAREAS</a>
+            <a href="inicio.html">INICIAR SESION</a><a>/</a><a href="registro.html">REGISTRARSE</a>
+        </nav>
+    </header>
+
+    <section class="tareas-main">
+
+        <h2>Rutinas de ejercicio</h2>
+
+        <div class="contenedor-tareas">
+
+            <!-- CALENDARIO -->
+            <div class="calendario">
+
+                <div class="cal-header">
+                    <button onclick="cambiarMes(-1)">‹</button>
+                    <h3 id="mesActual"></h3>
+                    <button onclick="cambiarMes(1)">›</button>
+                </div>
+
+                <div class="dias-semana">
+                    <div>Dom</div>
+                    <div>Lun</div>
+                    <div>Mar</div>
+                    <div>Mié</div>
+                    <div>Jue</div>
+                    <div>Vie</div>
+                    <div>Sáb</div>
+                </div>
+
+                <div id="calendario" class="grid-calendario"></div>
+
+            </div>
+
+            <!-- PANEL TAREAS -->
+            <div class="panel-tareas">
+
+                <h3 id="fechaSeleccionada">Selecciona un día del calendario</h3>
+                <ul id="listaTareas"></ul>
+
+                <div class="crear-tarea">
+                    <input type="text" id="nuevaTarea" placeholder="Ej: juego de búsqueda 10 minutos">
+                    <button onclick="agregarTarea()">Agregar rutina</button>
+                </div>
+
+                <div class="premios">
+                    <h4>Premios obtenidos</h4>
+                    <p id="premios">0 descuentos disponibles</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <div class="footer-contenido">
+
+            <div class="footer-col">
+                <img src="../ASSETS/IMAGENES/LogoAnimal.png" alt="Logo" class="footer-logo">
+                <p>Tu guía para mascotas en espacios reducidos.</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Navegación</h4>
+                <a href="index.html">Inicio</a>
+                <a href="about.html">Sobre nosotros</a>
+                <a href="tienda.html">Tienda</a>
+                <a href="biblioteca.html">Biblioteca</a>
+                <a href="tareas.html">Tareas</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Cuenta</h4>
+                <a href="usuario.html">Mi perfil</a>
+                <a href="inicio.html">Iniciar sesión</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Síguenos</h4>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+        <p>© 2026 PetGym. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
+    <script src="../JS/tareas.js"></script>
+
+</body>
+</html>
