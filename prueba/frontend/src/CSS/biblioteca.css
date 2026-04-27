@@ -1,0 +1,751 @@
+/* =========================================
+   FONT & VARIABLES
+   ========================================= */
+@font-face {
+    font-family: 'Moderne Sans';
+    src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/4273/moderne_sans.woff2);
+}
+
+:root {
+    --bg: #000000;
+    --bg-soft: rgba(5, 5, 5, 0.98);
+    --bg-card: rgba(255, 255, 255, 0.03);
+    --text: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.65);
+    --text-faint: rgba(255, 255, 255, 0.35);
+    --border: rgba(255, 255, 255, 0.1);
+    --border-hover: rgba(255, 255, 255, 0.35);
+    --font-display: 'Moderne Sans', sans-serif;
+    --font-body: 'Century Schoolbook', serif;
+    height: var(--header-h);
+    --max-w: 1200px;
+    --transition: 0.3s ease;
+}
+
+/* =========================================
+   RESET
+   ========================================= */
+
+
+body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+header h1 {
+    font-family: var(--font-display);
+    font-size: 2rem;
+    letter-spacing: 0.55rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.25rem;
+    flex-wrap: wrap;
+    padding: 0 1rem;
+}
+
+nav a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--text-muted);
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.12rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid transparent;
+    transition: color var(--transition), border-color var(--transition);
+}
+
+nav a:hover {
+    color: var(--text);
+    border-color: var(--border);
+}
+
+nav span {
+    color: var(--text-faint);
+}
+
+.espacio-header-biblioteca {
+    padding-top: 20px; }
+
+/* =========================================
+   MAIN WRAPPER
+   ========================================= */
+.main {
+    padding-top: 160px;
+    min-height: 100vh;
+    background: var(--bg);
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+.biblioteca-hero {
+    min-height: 40vh;
+    background: var(--bg-soft);
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.biblioteca-hero h2 {
+    font-family: var(--font-display);
+    font-size: 4.5rem;
+    letter-spacing: 0.55rem;
+    font-weight: 100;
+    color: var(--text);
+    margin-bottom: 1.2rem;
+}
+
+.biblioteca-hero p {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    max-width: 680px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* =========================================
+   BUSCADOR Y FILTROS
+   ========================================= */
+.biblioteca-header {
+    max-width: var(--max-w);
+    margin: 3rem auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.buscador {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+}
+
+.buscador input {
+    appearance: none;
+    flex: 1;
+    padding: 0.9rem 1.4rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-right: none;
+    border-radius: 0;
+    font-size: 0.9rem;
+    color: var(--text);
+    font-family: var(--font-display);
+    letter-spacing: 0.05rem;
+    transition: background var(--transition);
+}
+
+.buscador input::placeholder {
+    color: var(--text-faint);
+}
+
+.buscador input:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.buscador button {
+    padding: 0 1.5rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+}
+
+.buscador button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text);
+}
+
+.filtros {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filtro-btn {
+    padding: 0.7rem 1.4rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    transition: all var(--transition);
+}
+
+.filtro-btn:hover,
+.filtro-btn.activo {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: var(--border-hover);
+    color: var(--text);
+}
+
+/* =========================================
+   GRID DE TARJETAS
+   ========================================= */
+.biblioteca-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    max-width: var(--max-w);
+    margin: 0 auto 6rem;
+    padding: 0 2rem;
+}
+
+.tarjeta {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    transition: transform var(--transition), background var(--transition), border-color var(--transition);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.tarjeta:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: var(--border-hover);
+    transform: translateY(-6px);
+}
+
+/* Media Preview */
+.media-preview {
+    position: relative;
+    height: 200px;
+    background: #0d0d0d;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.media-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.75;
+    transition: opacity var(--transition);
+}
+
+.tarjeta:hover .media-preview img {
+    opacity: 1;
+}
+
+.media-preview i.fa-file-pdf,
+.media-preview i.fa-file-word {
+    font-size: 4rem;
+    color: var(--text-faint);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 52px;
+    height: 52px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: 1.1rem;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    transition: border-color var(--transition), background var(--transition);
+}
+
+.tarjeta:hover .play-overlay {
+    border-color: rgba(255, 255, 255, 0.9);
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.duracion {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.25rem 0.7rem;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.05rem;
+}
+
+/* Info Tarjeta */
+.tarjeta-info {
+    padding: 1.6rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.tarjeta-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.9rem;
+}
+
+.categoria-badge {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    letter-spacing: 0.12rem;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    padding: 0.25rem 0.7rem;
+}
+
+.tipo-icon {
+    color: var(--text-faint);
+    font-size: 1.1rem;
+}
+
+.tarjeta-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 0.7rem;
+    color: var(--text);
+    font-weight: 400;
+}
+
+.tarjeta-info p {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 1.2rem;
+    flex: 1;
+    line-height: 1.55;
+}
+
+.tarjeta-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+}
+
+.fecha {
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    color: var(--text-faint);
+    letter-spacing: 0.05rem;
+}
+
+.ver-btn,
+.descargar-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.45rem 1.1rem;
+    cursor: pointer;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    transition: background var(--transition), border-color var(--transition);
+}
+
+.ver-btn:hover,
+.descargar-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--border-hover);
+}
+
+/* =========================================
+   BOTÓN FLOTANTE
+   ========================================= */
+.subir-flotante {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text);
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+    z-index: 999;
+}
+
+.subir-flotante:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* =========================================
+   MODAL
+   ========================================= */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.88);
+    backdrop-filter: blur(10px);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-contenido {
+    background: #080808;
+    border: 1px solid var(--border);
+    padding: 2.5rem;
+    max-width: 500px;
+    width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1rem;
+}
+
+.modal-header h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    letter-spacing: 0.25rem;
+    font-weight: 400;
+    color: var(--text);
+}
+
+.cerrar-modal {
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--text-muted);
+    transition: color var(--transition);
+    line-height: 1;
+}
+
+.cerrar-modal:hover {
+    color: var(--text);
+}
+
+.form-grupo {
+    margin-bottom: 1.5rem;
+}
+
+.form-grupo label {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    letter-spacing: 0.12rem;
+    color: var(--text-muted);
+    margin-bottom: 0.5rem;
+}
+
+.form-grupo input,
+.form-grupo select,
+.form-grupo textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: background var(--transition), border-color var(--transition);
+    border-radius: 0;
+    appearance: none;
+}
+
+.form-grupo input:focus,
+.form-grupo select:focus,
+.form-grupo textarea:focus {
+    outline: none;
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.form-grupo select option {
+    background: #111;
+    color: var(--text);
+}
+
+.subir-zona {
+    border: 1px dashed rgba(255, 255, 255, 0.25);
+    padding: 2.5rem;
+    text-align: center;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color var(--transition), background var(--transition);
+}
+
+.subir-zona:hover {
+    border-color: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.04);
+}
+
+.subir-zona i {
+    font-size: 2.5rem;
+    color: var(--text-faint);
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.subir-zona p {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.btn-subir {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    letter-spacing: 0.2rem;
+    cursor: pointer;
+    transition: background var(--transition), border-color var(--transition);
+    margin-top: 1rem;
+}
+
+.btn-subir:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+/* El footer vive dentro de .main, forzamos que rompa
+   cualquier restricción de ancho del contenedor padre */
+footer {
+    background: #ffffff;
+    color: #1a1a1a;
+    padding: 4rem 2rem 2rem;
+    font-family: var(--font-display);
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    width: 100%;
+    position: relative;
+    left: 0%;
+    right: 50%;
+    margin: 0;
+}
+
+.footer-contenido {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+}
+
+.footer-col:first-child {
+    padding-right: 2rem;
+}
+
+.footer-logo {
+    max-width: 110px;
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+.footer-col>p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #5a5a5a;
+    line-height: 1.6;
+}
+
+.footer-col h4 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.12rem;
+    margin-bottom: 1.5rem;
+    color: #000;
+    font-weight: 600;
+    position: relative;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.5rem;
+    width: 28px;
+    height: 1.5px;
+    background: #000;
+    opacity: 0.18;
+}
+
+.footer-col a {
+    display: block;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin-bottom: 0.7rem;
+    transition: color var(--transition), transform var(--transition);
+}
+
+.footer-col a:hover {
+    color: #000;
+    transform: translateX(5px);
+}
+
+.redes {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 0.25rem;
+}
+
+.redes a {
+    color: #555 !important;
+    font-size: 1.3rem;
+    margin-bottom: 0 !important;
+    transition: color var(--transition), transform var(--transition) !important;
+}
+
+.redes a:hover {
+    color: #000 !important;
+    transform: translateY(-3px) !important;
+}
+
+.footer-bottom {
+    max-width: var(--max-w);
+    margin: 3rem auto 0;
+    padding-top: 1.8rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    color: #888;
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+    .footer-contenido {
+        grid-template-columns: 1fr 1fr;
+        gap: 2.5rem;
+    }
+
+    .footer-col:first-child {
+        grid-column: 1 / -1;
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .biblioteca-header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .buscador {
+        min-width: unset;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --header-h: 105px;
+    }
+
+    .biblioteca-hero h2 {
+        font-size: 3rem;
+        letter-spacing: 0.35rem;
+    }
+
+    .biblioteca-hero p {
+        font-size: 1.05rem;
+    }
+
+    .filtros {
+        justify-content: center;
+    }
+
+    .biblioteca-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    nav a {
+        font-size: 0.72rem;
+        padding: 0.3rem 0.5rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .footer-contenido {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .redes {
+        justify-content: center;
+    }
+
+    .footer-col a:hover {
+        transform: translateY(-2px);
+    }
+
+    .biblioteca-hero h2 {
+        font-size: 2.4rem;
+    }
+}

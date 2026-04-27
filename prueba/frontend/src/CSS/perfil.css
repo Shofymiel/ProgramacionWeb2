@@ -1,0 +1,243 @@
+/* ====================== PERFIL DE USUARIO - PETGYM ====================== */
+
+.perfil-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  padding: 80px 6% 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.perfil-card {
+  background: #111111;
+  border-radius: 24px;
+  max-width: 740px;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* Banner */
+.perfil-banner {
+  background: linear-gradient(135deg, #1f1f1f, #2a2a2a);
+  padding: 20px 40px;
+  text-align: center;
+}
+
+.banner-label {
+  color: #aaaaaa;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+/* Foto + Nombre */
+.perfil-header {
+  padding: 50px 40px 30px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.perfil-foto {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #1a1a1a;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.perfil-info h2 {
+  color: #ffffff;
+  font-size: 2.1rem;
+  margin: 0 0 6px 0;
+  font-weight: 700;
+}
+
+.perfil-badge {
+  color: #a0a0a0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/* Información Personal - Horizontal */
+.info-section {
+  padding: 0 100px;
+}
+
+.seccion-titulo {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 32px 50px;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-label {
+  color: #888888;
+  font-size: 0.92rem;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.info-valor {
+  color: #e0e0e0;
+  font-size: 1.08rem;
+  font-weight: 500;
+}
+
+/* Stats */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+  padding: 0 100px;
+}
+
+.stat-box {
+  background: #1a1a1a;
+  padding: 28px 20px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.stat-num {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  color: #aaaaaa;
+  font-size: 0.95rem;
+}
+
+/* Mascotas */
+.mascotas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 18px;
+  padding: 0 100px;
+}
+
+.mascota-chip {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+.mascota-chip:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  transform: translateY(-3px);
+}
+
+.mascota-chip.agregar {
+  border-style: dashed;
+  border-color: #555;
+  text-align: center;
+}
+
+.mascota-chip.agregar:hover {
+  background: #222222;
+  border-color: #777;
+}
+
+.mascota-nombre {
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 4px;
+}
+
+.mascota-detalle {
+  color: #888;
+  font-size: 0.95rem;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 45px 100px;
+}
+
+/* Botones */
+.perfil-acciones {
+  padding: 0 100px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.btn {
+  padding: 16px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #ffffff;
+  color: #111111;
+}
+
+.btn-primary:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid #666;
+}
+
+.btn-secondary:hover {
+  background: #222;
+}
+
+.btn-danger {
+  background: #c42b2b;
+  color: #ffffff;
+}
+
+.btn-danger:hover {
+  background: #a52222;
+}
+
+/* Responsive */
+@media (max-width: 680px) {
+  .perfil-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+}

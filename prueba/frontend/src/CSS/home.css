@@ -1,0 +1,367 @@
+/* ====================== HOME - PETGYM - ESTILO ELEGANTE ====================== */
+
+/* HEADER con blur y transparencia */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(15, 15, 15, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1px 6%; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1.2px;
+}
+
+/* Navegación */
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  font-size: 1.05rem;
+}
+
+header nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+header nav a:hover {
+  color: #d4d4d4;
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffffff;
+  transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+header nav span {
+  color: #777777;
+  font-weight: 300;
+}
+
+/* ====================== VIDEO DE FONDO - EXPANDIDO ====================== */
+.video-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;           /* Puedes cambiar a 110vh o 120vh si quieres más largo */
+  overflow: hidden;
+  margin-top: 0;
+}
+
+video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.55) contrast(1.1);
+}
+
+.video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0.60) 60%,
+    rgba(0, 0, 0, 0.80) 90%
+  );
+  z-index: 2;
+}
+
+/* ====================== TEXTO PRINCIPAL (BLANCO SÓLIDO) ====================== */
+#fashion {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  color: #ffffff;
+}
+
+#fashion h2 {
+  font-size: 4.2rem;
+  font-weight: 800;
+  line-height: 1.05;
+  max-width: 1100px;
+  margin: 0 auto;
+  letter-spacing: -2.4px;
+  text-shadow: 0 8px 30px rgba(0, 0, 0, 0.75);
+}
+
+/* ====================== SECCIONES ====================== */
+section {
+  position: relative;
+  z-index: 2;
+  padding: 110px 8%;
+  background: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Títulos de secciones */
+section h2 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 50px;
+  letter-spacing: -1px;
+}
+
+/* ====================== CARACTERÍSTICAS - NUEVO DISEÑO ====================== */
+.caracteristicas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 35px;
+  margin-top: 60px;
+}
+
+.card {
+  background: rgba(25, 25, 25, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 45px 32px 40px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, #ffffff, #cccccc);
+  transform: scaleX(0);
+  transition: transform 0.5s ease;
+}
+
+.card:hover {
+  transform: translateY(-15px);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.6);
+}
+
+.card:hover::before {
+  transform: scaleX(1);
+}
+
+.card h3 {
+  font-size: 1.45rem;
+  margin-bottom: 18px;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.card p {
+  color: #cccccc;
+  line-height: 1.65;
+  font-size: 1.02rem;
+}
+
+/* ====================== COMO FUNCIONA ====================== */
+.como-funciona {
+  background: #111111;
+}
+
+.pasos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.paso {
+  background: rgba(35, 35, 35, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 28px 24px;
+  border-radius: 16px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.paso:hover {
+  background: rgba(55, 55, 55, 0.95);
+  transform: translateY(-8px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* ====================== SECCIÓN IMPACTO ====================== */
+.impacto {
+  text-align: center;
+  padding-bottom: 140px;
+}
+
+.impacto button {
+  display: block;
+  margin: 60px auto 0;
+  padding: 18px 56px;
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  border-radius: 14px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.impacto button:hover {
+  background: #f0f0f0;
+  transform: translateY(-6px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ====================== FOOTER BLANCO ====================== */
+footer {
+  background: #ffffff;
+  color: #111111;
+  padding: 90px 8% 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-contenido {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr 1fr 1.2fr;
+  gap: 70px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-col h4 {
+  font-size: 1.15rem;
+  margin-bottom: 22px;
+  font-weight: 700;
+  color: #000000;
+}
+
+.footer-col a {
+  display: block;
+  color: #444444;
+  text-decoration: none;
+  margin-bottom: 14px;
+  transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+  color: #000000;
+}
+
+.footer-logo {
+  width: 160px;
+  margin-bottom: 18px;
+}
+
+.footer-col p {
+  color: #555555;
+  line-height: 1.7;
+  max-width: 320px;
+}
+
+.redes {
+  display: flex;
+  gap: 24px;
+  font-size: 1.75rem;
+  margin-top: 15px;
+}
+
+.redes i:hover {
+  color: #000000;
+  transform: scale(1.25);
+  transition: all 0.3s ease;
+}
+
+/* Footer inferior */
+.footer-bottom {
+  margin-top: 90px;
+  padding-top: 35px;
+  border-top: 1px solid #eeeeee;
+  text-align: center;
+  color: #666666;
+  font-size: 0.97rem;
+}
+
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 1024px) {
+  #fashion h2 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 16px 5%;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  header nav {
+    gap: 20px;
+  }
+
+  .caracteristicas {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer-contenido {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  #fashion {
+    padding: 180px 15px 80px;
+  }
+
+  #fashion h2 {
+    font-size: 2.7rem;
+  }
+
+  .caracteristicas {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-contenido {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+}

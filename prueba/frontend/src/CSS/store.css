@@ -1,0 +1,380 @@
+/* ====================== TIENDA PETGYM - ESTILO ELEGANTE ====================== */
+
+/* ====================== HEADER ====================== */
+
+/* Header principal (más compacto) */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 15, 15, 0.95);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-main-dos {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1px 6%;
+}
+
+.header-main-dos h1 {
+  color: #ffffff;
+  font-size: 2.1rem;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: -1px;
+}
+
+.nav-principal-dos {
+  display: flex;
+  gap: 28px;
+  font-size: 1.02rem;
+}
+
+.nav-principal-dos a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-principal-dos a:hover {
+  color: #d4d4d4;
+}
+
+.espacio-header {
+  padding-top: 130px;
+}
+
+/* ====================== HEADER CATEGORÍAS - MÁS BAJO Y LIMPIO ====================== */
+
+.header-categorias {
+  background: #1a1a1a;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 1px 6%;           /* Reducido para que no sea tan alto */
+}
+
+.nav-categorias {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  font-size: 0.98rem;
+}
+
+.nav-categorias a {
+  color: #cccccc;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-categorias a:hover {
+  color: #ffffff;
+}
+
+.nav-categorias a.destacado {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.nav-categorias a.favoritos {
+  color: #ffd700;
+  font-weight: 600;
+}
+
+.nav-categorias button {
+  margin-left: auto;
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-categorias button:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+/* ====================== FILTROS ====================== */
+
+.filtros-container-dos {
+  background: #111111;
+  padding: 50px 6%;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.filtro-precio-dos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 280px;
+}
+
+.filtro-precio-dos label {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.filtro-precio-dos input[type="range"] {
+  accent-color: #ffffff;
+}
+
+.filtro-categorias-dos {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.filtro-categorias-dos label {
+  color: #cccccc;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 0.97rem;
+}
+
+.filtro-categorias-dos input[type="checkbox"] {
+  accent-color: #ffffff;
+  cursor: pointer;
+}
+
+.btn-limpiar-filtros-dos {
+  background: transparent;
+  color: #aaaaaa;
+  border: 1px solid #555;
+  padding: 10px 22px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-left: auto;
+}
+
+.btn-limpiar-filtros-dos:hover {
+  background: #222;
+  color: #ffffff;
+  border-color: #777;
+}
+
+/* ====================== PRODUCTOS ====================== */
+
+.main.bd-grid {
+  padding: 60px 6%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 35px;
+  background: #0a0a0a;
+}
+
+.card {
+  background: #1a1a1a;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.card-oferta {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #ffffff;
+  color: #111111;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  z-index: 2;
+}
+
+.card__img {
+  height: 240px;
+  overflow: hidden;
+}
+
+.card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card__img img {
+  transform: scale(1.08);
+}
+
+.card__name {
+  padding: 18px 20px 10px;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.card__precis {
+  padding: 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.card__preci {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.card__preci--before {
+  text-decoration: line-through;
+  color: #777;
+  font-size: 1rem;
+}
+
+.card__preci--now {
+  color: #ffffff;
+}
+
+.card__icon {
+  background: none;
+  border: none;
+  font-size: 1.6rem;
+  cursor: pointer;
+  color: #aaaaaa;
+  transition: all 0.3s ease;
+}
+
+.card__icon.active {
+  color: #ff4d4d;
+}
+
+.carrito-btn {
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.carrito-btn:hover {
+  background: #e0e0e0;
+}
+
+/* ====================== MODALES ====================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal-contenido {
+  background: #1a1a1a;
+  border-radius: 20px;
+  width: 90%;
+  max-width: 520px;
+  max-height: 92vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-header {
+  padding: 25px 30px;
+  border-bottom: 1px solid #333;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-header h2 {
+  color: #ffffff;
+  margin: 0;
+}
+
+.modal-cerrar {
+  font-size: 2rem;
+  cursor: pointer;
+  color: #888;
+}
+
+.modal-cerrar:hover {
+  color: #ffffff;
+}
+
+/* Resto de estilos de modal (puedes expandir si necesitas) */
+.modal-body {
+  padding: 30px;
+  color: #ddd;
+}
+
+/* Footer (reutilizando estilo anterior) */
+footer {
+  background: #ffffff;
+  color: #111;
+  padding: 80px 6% 40px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .nav-categorias {
+    gap: 20px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-main-dos {
+    flex-direction: column;
+    gap: 15px;
+    padding: 16px 5%;
+  }
+
+  .header-categorias {
+    padding: 10px 5%;
+  }
+
+  .nav-categorias {
+    justify-content: center;
+  }
+
+  .filtros-container-dos {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+  }
+
+  .main.bd-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    padding: 40px 5%;
+  }
+}
