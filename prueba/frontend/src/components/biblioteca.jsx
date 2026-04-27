@@ -217,7 +217,7 @@ function Libreria() {
         <footer>
           <div className="footer-contenido">
             <div className="footer-col">
-              <img src="../assets/IMAGENES/LogoAnimal.png" alt="Logo" className="footer-logo" />
+                <img src="LogoAnimal.png" alt="Logo" className="footer-logo" />
               <p>Tu guía para mascotas en espacios reducidos.</p>
             </div>
             <div className="footer-col">

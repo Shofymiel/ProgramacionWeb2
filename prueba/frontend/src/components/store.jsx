@@ -12,7 +12,7 @@ function Store() {
       nombre: "ALIMENTO ADULTO",
       precioOriginal: 350.99,
       precioActual: 279.99,
-      imagen: "../ASSETS/IMAGENES/comidaPerroAdulto.png",
+      imagen: "comidaPerroAdulto.png",
       categoria: "alimento",
       descuento: 20
     },
@@ -21,7 +21,7 @@ function Store() {
       nombre: "RASCADOR PARA GATOS",
       precioOriginal: null,
       precioActual: 104.90,
-      imagen: "../ASSETS/IMAGENES/rascador.png",
+      imagen: "rascador.png",
       categoria: "juguete",
       descuento: 0
     },
@@ -30,7 +30,7 @@ function Store() {
       nombre: "CAMA ACOLCHADA",
       precioOriginal: 645.90,
       precioActual: 599.99,
-      imagen: "../ASSETS/IMAGENES/camaAlcochada.png",
+      imagen: "camaAlcochada.png",
       categoria: "accesorio",
       descuento: 7
     },
@@ -39,7 +39,7 @@ function Store() {
       nombre: "COLLAR AJUSTABLE",
       precioOriginal: 150.45,
       precioActual: 120.85,
-      imagen: "../ASSETS/IMAGENES/collarAjustable.png",
+      imagen: "collarAjustable.png",
       categoria: "accesorio",
       descuento: 20
     },
@@ -48,7 +48,7 @@ function Store() {
       nombre: "COMIDA PAJARO",
       precioOriginal: 8.990,
       precioActual: 6.990,
-      imagen: "../ASSETS/IMAGENES/comidaPajaro.png",
+      imagen: "comidaPajaro.png",
       categoria: "alimento",
       descuento: 22
     },
@@ -57,7 +57,7 @@ function Store() {
       nombre: "BEBEDERO AUTOMÁTICO",
       precioOriginal: 42.990,
       precioActual: 36.990,
-      imagen: "../ASSETS/IMAGENES/BebederoAutomatico.png",
+      imagen: "BebederoAutomatico.png",
       categoria: "accesorio",
       descuento: 14
     },
@@ -66,7 +66,7 @@ function Store() {
       nombre: "PELOTA ANTIESTRES",
       precioOriginal: null,
       precioActual: 50.12,
-      imagen: "../ASSETS/IMAGENES/PelotaAntiEstres.jpg",
+      imagen: "PelotaAntiEstres.jpg",
       categoria: "juguete",
       descuento: 0
     },
@@ -75,7 +75,7 @@ function Store() {
       nombre: "ARENA GATOS",
       precioOriginal: 18.990,
       precioActual: 14.990,
-      imagen: "../ASSETS/IMAGENES/ArenaGatos.png",
+      imagen: "ArenaGatos.png",
       categoria: "accesorio",
       descuento: 21
     },
@@ -84,7 +84,7 @@ function Store() {
       nombre: "CEPILLO DENTAL",
       precioOriginal: 12.990,
       precioActual: 9.990,
-      imagen: "../ASSETS/IMAGENES/kit-dental.png",
+      imagen: "kit-dental.png",
       categoria: "accesorio",
       descuento: 23
     },
@@ -93,7 +93,7 @@ function Store() {
       nombre: "TRANSPORTADORA",
       precioOriginal: 55.990,
       precioActual: 47.990,
-      imagen: "../ASSETS/IMAGENES/TRANSPORTADORA-CHICA.png",
+      imagen: "TRANSPORTADORA-CHICA.png",
       categoria: "accesorio",
       descuento: 14
     },
@@ -102,7 +102,7 @@ function Store() {
       nombre: "COMEDERO DOBLE",
       precioOriginal: 16.990,
       precioActual: 13.990,
-      imagen: "../ASSETS/IMAGENES/ComederoDOble.png",
+      imagen: "ComederoDOble.png",
       categoria: "accesorio",
       descuento: 18
     },
@@ -111,7 +111,7 @@ function Store() {
       nombre: "PELOTA INTERACTIVA",
       precioOriginal: 28.990,
       precioActual: 23.990,
-      imagen: "../ASSETS/IMAGENES/PelotaRoja.jpg",
+      imagen: "PelotaRoja.jpg",
       categoria: "juguete",
       descuento: 17
     },
@@ -120,7 +120,7 @@ function Store() {
       nombre: "ANTIPULGAS",
       precioOriginal: 28.990,
       precioActual: 23.990,
-      imagen: "../ASSETS/IMAGENES/AntipulgasGatos.png",
+      imagen: "AntipulgasGatos.png",
       categoria: "farmacia",
       descuento: 17
     },
@@ -130,7 +130,7 @@ function Store() {
       nombre: "PARQUE PAJAROS",
       precioOriginal: 28.990,
       precioActual: 23.990,
-      imagen: "../ASSETS/IMAGENES/ParqueJuegosPajaros.jpg",
+      imagen: "ParqueJuegosPajaros.jpg",
       categoria: "juguete",
       descuento: 17
     }
@@ -594,7 +594,7 @@ function Store() {
       <footer>
         <div className="footer-contenido">
           <div className="footer-col">
-            <img src="../ASSETS/IMAGENES/LogoAnimal.png" alt="Logo" className="footer-logo" />
+            <img src="LogoAnimal.png" alt="Logo" className="footer-logo" />
             <p>Tu guía para mascotas en espacios reducidos.</p>
           </div>
 
@@ -609,7 +609,7 @@ function Store() {
 
           <div className="footer-col">
             <h4>Cuenta</h4>
-            <Link to="/usuario">Mi perfil</Link>
+            <Link to="/perfil">Mi perfil</Link>
             <Link to="/inicio">Iniciar sesión</Link>
           </div>
 

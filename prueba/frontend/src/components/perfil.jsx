@@ -1,137 +1,163 @@
+
 import '../CSS/perfil.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+
 
 function Perfil() {
   const navigate = useNavigate();
 
- return (
-  <>
-    <header>
-      <h1>PETGYM</h1>
-      <nav className="nav-principal">
-        <Link to="/">HOME</Link>
-        <Link to="/about">NOSOTROS</Link>
-        <Link to="/store">TIENDA</Link>
-        <Link to="/biblioteca">BIBLIOTECA</Link>
-        <Link to="/tareas">TAREAS</Link>
-        <Link to="/inicio">INICIAR SESIÓN</Link> 
-        <span className="nav-separator">/</span>
-        <Link to="/registro">REGISTRARSE</Link>
-      </nav>
-    </header>
+  const [user, setUser] = useState(null);
 
-    <section className="espacio-header"></section>
+  useEffect(() => {
+    const obtenerPerful = async () => {
 
-    <div className="perfil-page">
-      <div className="perfil-card">
+      try {
+        const token = localStorage.getItem('token');
 
-        {/* Banner */}
-        <div className="perfil-banner">
-          <span className="banner-label">PETGYM MEMBER</span>
-        </div>
+        const response = await fetch('http://localhost:3000/perfil', {
+          headers: { Authorization: `Bearer ${token}` }
+        });
+        const userData = await response.json();
+        setUser(userData);
+      } catch (error) {
+        console.error('Error al obtener el perfil:', error);
+      }
+    }
+    obtenerPerful();
+  }, []);
 
-        {/* Foto + Nombre */}
-        <div className="perfil-header">
-          <img
-            src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y"
-            alt="Foto de perfil"
-            className="perfil-foto"
-          />
-          <div className="perfil-info">
-            <h2 className="perfil-nombre">Juan Pérez</h2>
-            <span className="perfil-badge">Miembro Pro</span>
-          </div>
-        </div>
+  return (
+    <>
+      <header>
+        <h1>PETGYM</h1>
+        <nav className="nav-principal">
+          <Link to="/">HOME</Link>
+          <Link to="/about">NOSOTROS</Link>
+          <Link to="/store">TIENDA</Link>
+          <Link to="/biblioteca">BIBLIOTECA</Link>
+          <Link to="/tareas">TAREAS</Link>
+          <Link to="/inicio">INICIAR SESIÓN</Link>
+          <span className="nav-separator">/</span>
+          <Link to="/registro">REGISTRARSE</Link>
+        </nav>
+      </header>
 
-        {/* Contenido */}
-        <div className="perfil-body">
+      <section className="espacio-header"></section>
 
-          {/* Información Personal - Ahora en horizontal */}
-          <div className="info-section">
-            <h3 className="seccion-titulo">Información Personal</h3>
-            <div className="info-grid">
-              <div className="info-item">
-                <div className="info-label">Correo electrónico</div>
-                <div className="info-valor">juan.perez@example.com</div>
-              </div>
-              <div className="info-item">
-                <div className="info-label">Teléfono</div>
-                <div className="info-valor">+52 123-456-7890</div>
-              </div>
-              <div className="info-item">
-                <div className="info-label">Ciudad</div>
-                <div className="info-valor">Ciudad de México</div>
-              </div>
-              <div className="info-item">
-                <div className="info-label">Miembro desde</div>
-                <div className="info-valor">Enero 2025</div>
-              </div>
-            </div>
+      <div className="perfil-page">
+        <div className="perfil-card">
+
+          {/* Banner */}
+          <div className="perfil-banner">
+            <span className="banner-label">PETGYM MEMBER</span>
           </div>
 
-          <div className="divider"></div>
 
-          {/* Actividad */}
-          <h3 className="seccion-titulo">Actividad Reciente</h3>
-          <div className="stats-grid">
-            <div className="stat-box">
-              <div className="stat-num">24</div>
-              <div className="stat-label">Tareas completadas</div>
-            </div>
-            <div className="stat-box">
-              <div className="stat-num">7</div>
-              <div className="stat-label">Racha actual</div>
-            </div>
-            <div className="stat-box">
-              <div className="stat-num">12</div>
-              <div className="stat-label">Recursos vistos</div>
+
+          {/* Foto + Nombre */}
+          <div className="perfil-header">
+            <img
+              src={
+                user?.foto
+                  ? `http://localhost:3000/${user.foto}`
+                  : 'https://www.gravatar.com/avatar/00000000000000000000000000000000?d=mp&f=y'
+              }
+              alt="Foto de perfil"
+              className="perfil-foto"
+            />
+            <div className="perfil-info">
+              <h2 className="perfil-nombre">{user ? `${user.nombre} ${user.apellidos}` : 'Cargando...'}</h2>
+              <span className="perfil-badge">Miembro Pro</span>
             </div>
           </div>
 
-          <div className="divider"></div>
+          {/* Contenido */}
+          <div className="perfil-body">
 
-          {/* Mis Mascotas */}
-          <h3 className="seccion-titulo">Mis Mascotas</h3>
-          <div className="mascotas-grid">
-            <div className="mascota-chip">
-              <div className="mascota-info">
-                <span className="mascota-nombre">Rocky</span>
-                <span className="mascota-detalle">Pastor Alemán · 3 años</span>
+
+            <div className="info-section">
+
+              <div className="info-grid">
+                <div className="info-item">
+                  <div className="info-label">Correo electrónico</div>
+                  <div className="info-valor">{user ? user.email : 'Cargando...'}</div>
+                </div>
+                <div className="info-item">
+                  <div className="info-label">Teléfono</div>
+                  <div className="info-valor">{user ? user.telefono : 'Cargando...'}</div>
+                </div>
+                <div className="info-item">
+                  <div className="info-label">Ciudad</div>
+                  <div className="info-valor">{user ? user.ciudad : 'Cargando...'}</div>
+                </div>
+
               </div>
             </div>
-            <div className="mascota-chip">
-              <div className="mascota-info">
-                <span className="mascota-nombre">Luna</span>
-                <span className="mascota-detalle">Gato Persa · 2 años</span>
+
+            <div className="divider"></div>
+
+            {/* Actividad */}
+            <h3 className="seccion-titulo">Actividad Reciente</h3>
+            <div className="stats-grid">
+              <div className="stat-box">
+                <div className="stat-num">24</div>
+                <div className="stat-label">Tareas completadas</div>
+              </div>
+              <div className="stat-box">
+                <div className="stat-num">7</div>
+                <div className="stat-label">Racha actual</div>
+              </div>
+              <div className="stat-box">
+                <div className="stat-num">12</div>
+                <div className="stat-label">Recursos vistos</div>
               </div>
             </div>
-            <div className="mascota-chip agregar">
-              <div className="mascota-info">
-                <span className="mascota-nombre">Agregar mascota</span>
-                <span className="mascota-detalle">Nueva mascota</span>
+
+            <div className="divider"></div>
+
+            {/* Mis Mascotas */}
+            <h3 className="seccion-titulo">Mis Mascotas</h3>
+            <div className="mascotas-grid">
+              <div className="mascota-chip">
+                <div className="mascota-info">
+                  <span className="mascota-nombre">Rocky</span>
+                  <span className="mascota-detalle">Pastor Alemán · 3 años</span>
+                </div>
+              </div>
+              <div className="mascota-chip">
+                <div className="mascota-info">
+                  <span className="mascota-nombre">Luna</span>
+                  <span className="mascota-detalle">Gato Persa · 2 años</span>
+                </div>
+              </div>
+              <div className="mascota-chip agregar">
+                <div className="mascota-info">
+                  <span className="mascota-nombre">Agregar mascota</span>
+                  <span className="mascota-detalle">Nueva mascota</span>
+                </div>
               </div>
             </div>
+
+            <div className="divider"></div>
+
+            {/* Acciones */}
+            <div className="perfil-acciones">
+              <button className="btn btn-primary">Editar Perfil</button>
+              <button className="btn btn-secondary">Cambiar Contraseña</button>
+              <button className="btn btn-danger" onClick={() => navigate('/inicio')}>
+                Cerrar Sesión
+              </button>
+            </div>
+
           </div>
-
-          <div className="divider"></div>
-
-          {/* Acciones */}
-          <div className="perfil-acciones">
-            <button className="btn btn-primary">Editar Perfil</button>
-            <button className="btn btn-secondary">Cambiar Contraseña</button>
-            <button className="btn btn-danger" onClick={() => navigate('/inicio')}>
-              Cerrar Sesión
-            </button>
-          </div>
-
         </div>
       </div>
-    </div>
 
-   <footer>
+      <footer>
         <div className="footer-contenido">
           <div className="footer-col">
-            <img src="../ASSETS/IMAGENES/LogoAnimal.png" alt="Logo" className="footer-logo" />
+            <img src="LogoAnimal.png" alt="Logo" className="footer-logo" />
             <p>Tu guía para mascotas en espacios reducidos.</p>
           </div>
 
@@ -164,8 +190,8 @@ function Perfil() {
           <p>© 2026 PetGym. Todos los derechos reservados.</p>
         </div>
       </footer>
-  </>
-);
+    </>
+  );
 }
 
 export default Perfil;

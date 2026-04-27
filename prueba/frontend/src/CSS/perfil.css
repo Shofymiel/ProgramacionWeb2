@@ -1,4 +1,4 @@
-/* ====================== PERFIL DE USUARIO - PETGYM ====================== */
+/* PERFIL DE USUARIO */
 
 .perfil-page {
   min-height: 100vh;
@@ -11,7 +11,7 @@
 .perfil-card {
   background: #111111;
   border-radius: 24px;
-  max-width: 740px;
+  max-width: 1500px;
   width: 100%;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
@@ -74,7 +74,8 @@
   font-size: 1.4rem;
   margin-bottom: 22px;
   font-weight: 600;
-  letter-spacing: -0.3px;
+  letter-spacing: 1px;
+  text-align: center;
 }
 
 .info-grid {
@@ -184,16 +185,16 @@
 
 /* Botones */
 .perfil-acciones {
-  padding: 0 100px 50px;
+  padding: 0 300px 50px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 14px;
 }
 
 .btn {
   padding: 16px 24px;
   border: none;
-  border-radius: 12px;
+  border-radius: 3px;
   font-size: 1.05rem;
   font-weight: 600;
   cursor: pointer;
@@ -201,33 +202,37 @@
 }
 
 .btn-primary {
-  background: #ffffff;
+  background: linear-gradient(135deg, #ffffff, #b2b2b2);
   color: #111111;
 }
 
 .btn-primary:hover {
-  background: #f0f0f0;
+  box-shadow: #ffffffb3 0px 4px 50px;
   transform: translateY(-2px);
 }
 
 .btn-secondary {
-  background: transparent;
+ background: linear-gradient(135deg, #ffb700d8, #ffba5b);
   color: #ffffff;
   border: 1px solid #666;
 }
 
 .btn-secondary:hover {
-  background: #222;
+  box-shadow: #b86e0db3 0px 4px 50px;
+  transform: translateY(-2px);
 }
 
 .btn-danger {
-  background: #c42b2b;
-  color: #ffffff;
+  background: linear-gradient(135deg, #ff7f7f, #940303);
 }
 
-.btn-danger:hover {
-  background: #a52222;
+.btn-danger:hover:hover {
+  
+ box-shadow: #ff8d8d 0px 4px 50px;
+  transform: translateY(-2px);
 }
+
+
 
 /* Responsive */
 @media (max-width: 680px) {
@@ -235,7 +240,7 @@
     flex-direction: column;
     text-align: center;
   }
-  
+
   .info-grid {
     grid-template-columns: 1fr;
     gap: 28px;

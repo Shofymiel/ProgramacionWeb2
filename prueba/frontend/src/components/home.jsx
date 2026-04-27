@@ -2,7 +2,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import '../CSS/home.css';
 import video from '../assets/VIDEOS/Video_Pero_Feliz.mp4';
-import logo from '../assets/IMAGENES/LogoAnimal.png';
+
 
 function Home() {
   const navigate = useNavigate();
@@ -92,7 +92,7 @@ function Home() {
 
       <section className="impacto">
         <h2>Más que ejercicio, una causa</h2>
-        <p>El 70% de los abandonos...</p>
+        
 
         <button onClick={() => navigate("/registro")}>
           Únete a la manada responsable
@@ -102,7 +102,7 @@ function Home() {
       <footer>
         <div className="footer-contenido">
           <div className="footer-col">
-            <img src="../ASSETS/IMAGENES/LogoAnimal.png" alt="Logo" className="footer-logo" />
+          <img src="LogoAnimal.png" alt="Logo" className="footer-logo" />
             <p>Tu guía para mascotas en espacios reducidos.</p>
           </div>
 
@@ -117,7 +117,7 @@ function Home() {
 
           <div className="footer-col">
             <h4>Cuenta</h4>
-            <Link to="/usuario">Mi perfil</Link>
+            <Link to="/perfil">Mi perfil</Link>
             <Link to="/inicio">Iniciar sesión</Link>
           </div>
 

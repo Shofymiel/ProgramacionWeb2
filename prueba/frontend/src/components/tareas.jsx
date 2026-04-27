@@ -200,7 +200,7 @@ function Tareas() {
       <footer>
         <div className="footer-contenido">
           <div className="footer-col">
-            <img src="../ASSETS/IMAGENES/LogoAnimal.png" alt="Logo" className="footer-logo" />
+            <img src="LogoAnimal.png" alt="Logo" className="footer-logo" />
             <p>Tu guía para mascotas en espacios reducidos.</p>
           </div>
 
@@ -215,7 +215,7 @@ function Tareas() {
 
           <div className="footer-col">
             <h4>Cuenta</h4>
-            <a href="/usuario">Mi perfil</a>
+            <a href="/perfil">Mi perfil</a>
             <a href="/inicio">Iniciar sesión</a>
           </div>
 
